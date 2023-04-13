@@ -9,45 +9,46 @@ sap.ui.define([
             onInit: function () {
 
                 this.oOwnerComponent = this.getOwnerComponent();
-                this.oRouter = this.oOwnerComponent.getRouter();
                 this.oOwnerComponent.getModel().setProperty("/layout", "OneColumn");
-                this.oRouter.attachRouteMatched(this.onRouteMatched, this);
+                
+                this.oRouter = this.oOwnerComponent.getRouter();
+                // this.oRouter.attachRouteMatched(this.onRouteMatched, this);
             },
 
 
-            onRouteMatched: function (oEvent) {
+            // ¿¿¿???
+            // onRouteMatched: function (oEvent) {
 
-                var sRouteName = oEvent.getParameter("name");
-                var oArguments = oEvent.getParameter("arguments");
+            //     var sRouteName = oEvent.getParameter("name");
+            //     var oArguments = oEvent.getParameter("arguments");
     
-                // Save the current route name
-                this.currentRouteName = sRouteName;
-                this.currentOrderPath = oArguments.orderPath;
-            },
+            //     // Save the current route name => Why?
+            //     this.currentRouteName = sRouteName;
+            //     this.currentOrderPath = oArguments.orderPath;
+
+            //     // console.table([this.currentRouteName, this.currentOrderPath]);
+            // },
 
 
+            // ¿¿¿???
+            // onStateChanged: function (oEvent) {
 
-            onStateChanged: function (oEvent) {
-
-                var bIsNavigationArrow = oEvent.getParameter("isNavigationArrow");
-                var sLayout = oEvent.getParameter("layout");
+            //     var bIsNavigationArrow = oEvent.getParameter("isNavigationArrow");
     
-                // Replace the URL with the new layout if a navigation arrow was used
-                debugger;
-                if (bIsNavigationArrow) {
-                    this.oRouter.navTo(this.currentRouteName, {
-                        layout: sLayout, 
-                        orderPath: this.currentOrderPath
-                    }, true);
-                }
-                // debugger;
-            },
+            //     // Replace the URL with the new layout if a navigation arrow was used
+
+            //     if (bIsNavigationArrow) {
+            //         this.oRouter.navTo(this.currentRouteName, {orderPath: this.currentOrderPath}, true);
+            //     };
+
+            //     console.log(bIsNavigationArrow);
+            // },
     
 
-
-            onExit: function () {
-                this.oRouter.detachRouteMatched(this.onRouteMatched, this);
-            }
+            // ¿¿¿???
+            // onExit: function () {
+            //     this.oRouter.detachRouteMatched(this.onRouteMatched, this);
+            // }
 
         });
     });

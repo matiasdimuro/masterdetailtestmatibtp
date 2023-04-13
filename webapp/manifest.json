@@ -118,7 +118,6 @@
                 "viewType": "XML",
                 "async": true,
                 "viewPath": "hexagon.masterdetailtestmatibtp.view",
-                "controlAggregation": "beginColumnPages",
                 "controlId": "flexibleColumnLayout",
                 "clearControlAggregation": true
             },
@@ -135,6 +134,14 @@
                         "ordersList",
                         "orderDetails"
                     ]
+                }, 
+                {
+                    "name": "product",
+                    "pattern": "orderDetails/{orderPath}/product/{productID}",
+                    "target": [
+                        "orderDetails",
+                        "product"
+                    ]
                 }
             ],
             "targets": {
@@ -143,7 +150,8 @@
                     "transition": "slide",
                     "clearControlAggregation": true,
                     "viewId": "ordersListView",
-                    "viewName": "OrdersList"
+                    "viewName": "OrdersList",
+                    "controlAggregation": "beginColumnPages"
                 },
                 "orderDetails": {
                     "viewType": "XML",
@@ -152,6 +160,14 @@
                     "viewId": "orderDetailsView",
                     "viewName": "OrderDetails",
                     "controlAggregation": "midColumnPages"
+                },
+                "product": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": true,
+                    "viewId": "productView",
+                    "viewName": "Product",
+                    "controlAggregation": "endColumnPages"
                 }
             }
         },

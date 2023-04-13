@@ -1,25 +1,26 @@
 <mvc:View
     controllerName="hexagon.masterdetailtestmatibtp.controller.App"
 	displayBlock="true"
-	height="100%"
 	xmlns="sap.f"
     xmlns:m="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 
 	<m:App id="app">
-        <FlexibleColumnLayout 
+    
+        <FlexibleColumnLayout
             id="flexibleColumnLayout" backgroundDesign="Solid"
-            stateChange=".onStateChanged" layout="{/layout}">
+            layout="{/layout}">
 
             <!-- <beginColumnPages>
                 <mvc:XMLView id="ordersListView" viewName="hexagon.masterdetailtestmatibtp.view.OrdersList"/>
             </beginColumnPages>
-
+            
             <midColumnPages>
                 <mvc:XMLView id="orderDetailsView" viewName="hexagon.masterdetailtestmatibtp.view.OrderDetails"/>
             </midColumnPages> -->
 
         </FlexibleColumnLayout>
+
     </m:App>
 
 </mvc:View>
