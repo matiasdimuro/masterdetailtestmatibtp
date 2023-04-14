@@ -9,7 +9,6 @@ sap.ui.define([
 
         onInit : function() {
 
-
             this._onLoadDialog();
 
             var oDataModel = this.getOwnerComponent().getModel('nwEntities');
@@ -21,7 +20,6 @@ sap.ui.define([
             oDataModel.read('/Orders', {
 
                 success: function(data) {
-                    debugger;
                     this._oDialog.close();
                     oJsonModel.setData(data);
                     // oView.setBusy(false);
@@ -49,7 +47,7 @@ sap.ui.define([
                 orderPath: window.encodeURIComponent(orderPath.substr(1))
             });
            
-            this.getOwnerComponent().getModel().setProperty("/layout", "TwoColumnsMidExpanded");
+            this.getOwnerComponent().getModel().setProperty("/layout", "TwoColumnsBeginExpanded");
         },
 
 
@@ -62,8 +60,7 @@ sap.ui.define([
                     controller: this 
                 })
 
-                .then(function(oDialog) { 
-                    debugger;
+                .then(function(oDialog) {
                     this._oDialog = oDialog; 
                     this.getView().addDependent(oDialog); 
                     this._oDialog.open(); 

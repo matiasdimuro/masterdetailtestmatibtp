@@ -65,7 +65,16 @@
 								}"/>
 						</VBox>
 						<VBox>
-							<ObjectAttribute title="Discontinued" text="{nwEntities>Discontinued}"/>
+							<ObjectStatus
+								title="Status" 
+								text="{
+									path: 'nwEntities>Discontinued',
+									formatter: '.formatter.isDiscontinuedValue' 
+								}"
+								state="{
+									path: 'nwEntities>Discontinued',
+									formatter: '.formatter.isDiscontinuedState'
+								}"/>
 						</VBox>
 					</HBox>
 				</f:DynamicPageHeader>
@@ -94,7 +103,10 @@
 							<cells>
 								<ObjectIdentifier title="{nwEntities>OrderID}" />
 								<Text text="{nwEntities>Quantity}" />
-								<Text text="{nwEntities>Discount}" />
+								<Text text="{
+									path: 'nwEntities>Discount',
+									formatter: '.formatter.currency'
+								}" />
 							</cells>
 						</ColumnListItem>
 					</dependents>

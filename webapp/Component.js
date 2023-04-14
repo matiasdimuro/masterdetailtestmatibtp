@@ -21,6 +21,7 @@ sap.ui.define([
                 UIComponent.prototype.init.apply(this, arguments);
 
                 this.getRouter().initialize();
+                this.getRouter().navTo("ordersList", {}, true);
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");

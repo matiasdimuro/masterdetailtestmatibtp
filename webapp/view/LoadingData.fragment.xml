@@ -8,6 +8,6 @@
 		id="dialog"
 		title="Loading Data"
 		titleAlignment="Center"
-		text="Wait please. The data is being retrieved from the server." />
+		text="Wait please. Data is being retrieved from the server." />
 
 </core:FragmentDefinition>

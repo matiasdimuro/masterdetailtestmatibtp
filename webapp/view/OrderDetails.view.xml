@@ -87,9 +87,17 @@
 					<ColumnListItem id="productTemplate" type="Navigation" press=".onSeeProduct">
 						<cells>
 							<ObjectIdentifier title="{nwEntities>ProductID}" />
-							<Text text="{nwEntities>UnitPrice}" />
+							<Text 
+								text="{
+									path: 'nwEntities>UnitPrice',
+									formatter: '.formatter.currency'
+								}" />
 							<Text text="{nwEntities>Quantity}" />
-							<Text text="{nwEntities>Discount}" />
+							<Text 
+								text="{
+									path: 'nwEntities>Discount',
+									formatter: '.formatter.currency'
+								}" />
 						</cells> 
 					</ColumnListItem>
 				</dependents>

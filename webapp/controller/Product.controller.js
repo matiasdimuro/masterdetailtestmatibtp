@@ -51,9 +51,10 @@ sap.ui.define([
             this.getOwnerComponent().getModel().setProperty("/layout", "TwoColumnsMidExpanded");
 
             var oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("orderDetails", {
-                orderPath: this.sOrderPath
-            });
+			// oRouter.navTo("orderDetails", {
+            //     orderPath: this.sOrderPath
+            // });
+            window.history.go(-1);
         },
 
 
@@ -96,8 +97,11 @@ sap.ui.define([
 
 			if (!this._pPopover) {
 				this._pPopover = Fragment.load({
-                    id: "productDataPage", // ID DEL "CONTENEDOR" DEL POPOVER
-					name: "hexagon.masterdetailtestmatibtp.view.ProductStockData"
+                    // ID DEL "CONTENEDOR" DEL POPOVER
+                    id: "productDataPage", 
+					name: "hexagon.masterdetailtestmatibtp.view.ProductStockData",
+                    // PARA QUE PUEDA ACCEDER AL FORMATTER DENTRO DEL CONTROLADOR
+                    controller: this
 				}).then(function (oPopover) {
 					oView.byId('productDataPage').addDependent(oPopover);
                     // BINDEO

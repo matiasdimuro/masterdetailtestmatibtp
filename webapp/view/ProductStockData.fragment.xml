@@ -17,7 +17,10 @@
                             path: 'nwEntities>UnitPrice',
                             formatter: '.formatter.currency'
                         }"
-                        statusText="{nwEntities>Discontinued}"
+                        statusText="{
+							path: 'nwEntities>Discontinued',
+							formatter: '.formatter.isDiscontinuedValue'
+						}"
 						state="Neutral">
 						<card:sideIndicators>
 							<card:NumericSideIndicator number="{nwEntities>UnitsInStock}" unit="Q" title="In stock" />

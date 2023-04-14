@@ -2,11 +2,14 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
+	"../model/formatter"
 
-], function(Controller, Filter, FilterOperator) {
+], function(Controller, Filter, FilterOperator, formatter) {
     'use strict';
     
     return Controller.extend("hexagon.masterdetailtestmatibtp.controller.OrderDetails", {
+
+		formatter : formatter,
 
         onInit: function () {
             
